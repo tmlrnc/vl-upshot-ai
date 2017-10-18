@@ -1,7 +1,9 @@
 import sys
 import operator
-import fuzz
-import process
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
+
 
 # The other numbers are cumulative costs and matches.
 
@@ -346,6 +348,11 @@ def main():
         exit(-1)
     file1 = sys.argv[1]
     file2 = sys.argv[2]
+
+    diff = fuzz.ratio("this is a test", "this is a test!")
+    print('Distance: {}'.format(diff))
+
+
 
     with open(file1) as f1, open(file2) as f2:
         for line1, line2 in zip(f1, f2):
