@@ -352,10 +352,12 @@ def main():
     diff = fuzz.ratio("this is a test", "this is a test!")
     print('Distance fuzz ratio: {}'.format(diff))
 
-
+    count = 1
 
     with open(file1) as f1, open(file2) as f2:
         for line1, line2 in zip(f1, f2):
+            print ('The line count is:', count)
+            count = count + 1
             print("Line 1: {}".format(line1.strip()))
             print("Line 2: {}".format(line2.strip()))
             dist, _, _ = edit_distance_backpointer(line1.split(), line2.split())
