@@ -350,7 +350,7 @@ def main():
     file2 = sys.argv[2]
 
     diff = fuzz.ratio("this is a test", "this is a test!")
-    print('Distance: {}'.format(diff))
+    print('Distance fuzz ratio: {}'.format(diff))
 
 
 
@@ -359,10 +359,10 @@ def main():
             print("Line 1: {}".format(line1.strip()))
             print("Line 2: {}".format(line2.strip()))
             dist, _, _ = edit_distance_backpointer(line1.split(), line2.split())
-            print('Distance: {}'.format(dist))
+            print('Distance edit: {}'.format(dist))
             print('=' * 80)
-            dist2, _, _ = fuzz.ratio(line1.split(), line2.split())
-            print('Distance: {}'.format(dist2))
+            dist2 = fuzz.ratio(line1.split(), line2.split())
+            print('Distance fr2: {}'.format(dist2))
             print('=' * 80)
 
 if __name__ == "__main__":
