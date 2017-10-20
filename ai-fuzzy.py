@@ -362,9 +362,41 @@ def main():
             print('Distance edit: {}'.format(dist))
             print('=' * 80)
             dist2 = fuzz.ratio(line1.split(), line2.split())
-            print('Distance fr2: {}'.format(dist2))
+            print('Distance fuzz ratio names: {}'.format(dist2))
+            print('=' * 80)
+            dist3 = fuzz.partial_ratio(line1.split(), line2.split())
+            print('Distance fuzz partial_ratio names: {}'.format(dist3))
+            print('=' * 80)
+            dist3 = fuzz.token_set_ratio(line1.split(), line2.split())
+            print('Distance fuzz token_set_ratio names: {}'.format(dist3))
             print('=' * 80)
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
